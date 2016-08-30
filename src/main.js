@@ -15,4 +15,3 @@ configRouter(router)
 const App = Vue.extend(rootApp)
 
 router.start(App, '#app')
-

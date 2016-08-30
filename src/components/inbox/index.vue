@@ -19,6 +19,11 @@
                     console.log('yes')
                     transition.next()
                 }
+            },
+
+            canDeactivate(transition) {
+                 console.log('Are you sure you want to leave inbox?')
+                 transition.next()
             }
 		},
 

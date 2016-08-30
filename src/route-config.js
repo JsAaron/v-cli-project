@@ -23,7 +23,7 @@ export default function configRouter(router) {
                 }
             }
         }
-    })
+    }) 
 
     router.beforeEach((transition) => {
         if (transition.to.path === '/forbidden') {
