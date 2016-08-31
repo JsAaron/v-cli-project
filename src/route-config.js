@@ -3,6 +3,9 @@ export default function configRouter(router) {
         '*': {
             component: require('./components/not-found.vue')
         },
+        '/counter':{
+            component:require('./components/counter/index.vue')
+        },
         '/about': {
             component: require('./components/about.vue')
         },
@@ -23,7 +26,7 @@ export default function configRouter(router) {
                 }
             }
         }
-    }) 
+    })
 
     router.beforeEach((transition) => {
         if (transition.to.path === '/forbidden') {

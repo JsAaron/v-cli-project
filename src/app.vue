@@ -19,6 +19,7 @@ a{
 
 <template>
     <p v-show="authenticating" style="color:red">Authenticating...</p>
+    <a v-link="{ path: '/counter' }">counter</a>
     <a v-link="{ path: '/inbox' }">inbox</a>
 	<a v-link="{ path: '/about' }">about</a>
 	<a v-link="{ path: '/user/1234/profile/what/name/123' }">user</a>
@@ -28,7 +29,9 @@ a{
 
 
 <script>
+    import store from './vuex/store'
     export default {
+        store,
         data() {
             return {
                 authenticating: false

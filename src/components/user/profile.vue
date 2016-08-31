@@ -8,11 +8,11 @@
 </template>
 
 <script type="text/javascript">
-
+  let i = 0
 	module.exports = {
        data() {
             return {
-                message: 'parent aaron'
+                message: 'parent aaron ' + (i++)
             }
         }
 	}
