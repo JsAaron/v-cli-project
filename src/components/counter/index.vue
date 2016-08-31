@@ -23,7 +23,7 @@
 <script>
 
 import * as actions from '../../vuex/actions'
-import { recentHistory } from './vuex/getters'
+import { recentHistory } from '../../vuex/getters'
 
 export default {
   vuex: {
