@@ -7,10 +7,7 @@
 <script>
 	export default {
 		props:{
-		  filterKey:{
-		  	type:'String',
-		  	toWay:true
-		  }
+		  filterKey:'String'
 		}
 	}
 </script>

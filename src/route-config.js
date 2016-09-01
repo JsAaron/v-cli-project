@@ -3,11 +3,14 @@ export default function configRouter(router) {
         '*': {
             component: require('./components/not-found.vue')
         },
-        '/grid':{
-            component:require('./components/grid/index.vue')
+        '/modal':{
+            component:require('./components/modal/index.vue')
         },
         '/counter':{
             component:require('./components/counter/index.vue')
+        },
+        '/grid':{
+            component:require('./components/grid/index.vue')
         },
         '/chat': {
             component: require('./components/chat/index.vue')

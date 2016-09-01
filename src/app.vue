@@ -32,7 +32,7 @@ a{
            v-link="{ path: data['path'] ,activeClass: data['activeClass'] ? data['activeClass'] : ''}">
            {{data.name}}
         </a>
-        <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view> 
+        <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view>
     </div>
 </template>
 
@@ -46,6 +46,7 @@ a{
             return {
                 authenticating: false,
                 linkData: [
+                  { path: '/modal', name:'modal'},
                   { path: '/counter',name:'counter'},
                   { path: '/grid', name:'grid'},
                   { path: '/chat' ,name:'chat',activeClass: 'chat-active-class'},

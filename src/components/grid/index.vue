@@ -21,10 +21,8 @@
 <script>
 import search from './search.vue';
 import grid from './grid.vue';
-import store from './store';
 
 export default {
-	// store,
 	data:function(){
 		return {
 			searchQuery:'',
