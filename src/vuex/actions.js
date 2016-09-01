@@ -1,17 +1,20 @@
+
+import * as types from './mutation-types'
+
 export const increment = ({
     dispatch
-}) => dispatch('INCREMENT')
+}) => dispatch(types.INCREMENT)
 
 export const decrement = ({
     dispatch
-}) => dispatch('DECREMENT')
+}) => dispatch(types.DECREMENT)
 
 export const incrementIfOdd = ({
     dispatch,
     state
 }) => {
     if ((state.count + 1) % 2 === 0) {
-        dispatch('INCREMENT')
+        dispatch(types.INCREMENT)
     }
 }
 
@@ -19,6 +22,6 @@ export const incrementAsync = ({
     dispatch
 }) => {
     setTimeout(() => {
-        dispatch('INCREMENT')
+        dispatch(types.INCREMENT)
     }, 1000)
 }

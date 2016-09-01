@@ -18,6 +18,11 @@
 			return {
 				showModal:false
 			}
+		},
+		watch:{
+			showModal:function(){
+				this.$parent.$refs.modal.show = this.showModal
+			}
 		}
 	}
 

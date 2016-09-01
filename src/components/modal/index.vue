@@ -1,8 +1,8 @@
 
 <template>
    <div>
-      <show-button v-ref:profile></show-button>
-      <modal></modal>
+      <show-button v-ref:button></show-button>
+      <modal v-ref:modal></modal>
     </div>
 </template>
 

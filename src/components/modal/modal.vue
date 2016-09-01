@@ -1,7 +1,7 @@
 <style src="./style.css" scoped></style>
 
 <template>
-    <div class="modal-mask" v-show="show" transition="modal">{{show}}
+    <div class="modal-mask" v-show="show" transition="modal">
     <div class="modal-wrapper">
       <div class="modal-container">
 
@@ -38,7 +38,12 @@
   export default {
     data:function(){
       return {
-        show:this.$parent.$refs.profile.showModal
+        show:this.$parent.$refs.button.showModal
+      }
+    },
+    watch:{
+      show:function(){
+        this.$parent.$refs.button.showModal = this.show
       }
     }
   }

@@ -15,7 +15,7 @@
       <button @click="incrementIfOdd">Increment if odd</button>
       <button @click="incrementAsync">Increment async</button>
       <div>
-        <div>Recent History: {{recentHistory}}</div>
+         <div>Recent History: {{recentHistory}}</div>
       </div>
     </div>
   </div>
@@ -27,11 +27,19 @@
 import * as actions from '../../vuex/actions'
 import { recentHistory } from '../../vuex/getters'
 
+
 export default {
   vuex: {
-  	actions,
+  	actions:{
+      increment:actions.increment,
+      decrement:actions.decrement,
+      incrementIfOdd:actions.incrementIfOdd,
+      incrementAsync:actions.incrementAsync
+    },
     getters: {
-      count: state => state.count,
+      count: function(state){
+          return state.counter.count
+      },
       recentHistory
     }
   }
