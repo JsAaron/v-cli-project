@@ -8,7 +8,8 @@
 
 <template>
     <div id="demo">
-		<form-search></form-search>
+		<form-search
+		 :filter-key.sync="searchQuery"></form-search>
 		<demo-grid
 		  :data="gridData"
 	      :columns="gridColumns"
@@ -20,11 +21,13 @@
 <script>
 import search from './search.vue';
 import grid from './grid.vue';
+import store from './store';
 
 export default {
+	// store,
 	data:function(){
 		return {
-		    searchQuery: '',
+			searchQuery:'',
 		    gridColumns: ['name', 'power'],
 		    gridData: [
 		      { name: 'Chuck Norris', power: Infinity },
