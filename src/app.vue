@@ -1,4 +1,4 @@
-<style>
+<style scoped>
 
 a{
     color:blue;
@@ -14,17 +14,24 @@ a{
     transform: translate3d(10px, 0, 0);
 }
 
+.v-link-active{
+    color:red;
+}
+
+.chat-active-class{
+    color:#9400D3;
+}
+
 </style>
 
 
 <template>
     <div>
         <p v-show="authenticating" style="color:red">Authenticating...</p>
-        <a v-link="{ path: '/counter' }">counter</a>
-        <a v-link="{ path: '/inbox' }">inbox</a>
-        <a v-link="{ path: '/about' }">about</a>
-        <a v-link="{ path: '/user/1234/profile/what/name/123' }">user</a>
-        <a v-link="{ path: '/forbidden' }">forbidden</a>
+        <a v-for="data in linkData"
+           v-link="{ path: data['path'] ,activeClass: data['activeClass'] ? data['activeClass'] : ''}">
+           {{data.name}}
+        </a>
         <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view> 
     </div>
 </template>
@@ -37,7 +44,16 @@ a{
         store,
         data() {
             return {
-                authenticating: false
+                authenticating: false,
+                linkData: [
+                  { path: '/counter',name:'counter'},
+                  { path: '/grid', name:'grid'},
+                  { path: '/chat' ,name:'chat',activeClass: 'chat-active-class'},
+                  { path: '/inbox' ,name:'inbox'},
+                  { path: '/about' ,name:'about'},
+                  { path: '//user/1234/profile/what/name/123',name:'user'},
+                  { path: '/forbidden' ,name:'forbidden'}
+                ]
             }
         }
     }

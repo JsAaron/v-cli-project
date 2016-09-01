@@ -1,20 +1,22 @@
-<style scoped="">
-	div{
-		margin: 20px;
-		padding:20px;
-		border: 1px solid red;
+<style scoped>
+	.layer{
+		margin: 30px;
+    padding: 30px;
+		border: 1px solid #42b983;
 	}
 </style>
 
 <template>
-    <div>
-    Clicked: {{ count }} times
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
-    <button @click="incrementIfOdd">Increment if odd</button>
-    <button @click="incrementAsync">Increment async</button>
-    <div>
-      <div>Recent History: {{recentHistory}}</div>
+  <div class="layer">
+      <div>
+      Clicked: {{ count }} times
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+      <button @click="incrementIfOdd">Increment if odd</button>
+      <button @click="incrementAsync">Increment async</button>
+      <div>
+        <div>Recent History: {{recentHistory}}</div>
+      </div>
     </div>
   </div>
 </template>
