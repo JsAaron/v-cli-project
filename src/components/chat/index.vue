@@ -8,11 +8,12 @@
 
 
 <script>
-	import ThreadSection from './ThreadSection.vue'
+
+	import threadSection from './threadSection.vue'
 
 	export default {
 	 	components: {
-	    	ThreadSection
+	    	threadSection
 	  	}
 	}
 </script>

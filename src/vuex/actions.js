@@ -1,6 +1,11 @@
-
 import * as types from './mutation-types'
+import * as api from '../components/chat/api'
 
+/**
+ * counter
+ * @param  {[type]} options.dispatch [description]
+ * @return {[type]}                  [description]
+ */
 export const increment = ({
     dispatch
 }) => dispatch(types.INCREMENT)
@@ -24,4 +29,14 @@ export const incrementAsync = ({
     setTimeout(() => {
         dispatch(types.INCREMENT)
     }, 1000)
+}
+
+
+/**
+ * char
+ */
+export const getAllMessages = ({ dispatch }) => {
+    api.getAllMessages(data => {
+        dispatch(types.RECEIVE_ALL, data)
+    })
 }

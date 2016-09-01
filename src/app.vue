@@ -32,13 +32,18 @@ a{
            v-link="{ path: data['path'] ,activeClass: data['activeClass'] ? data['activeClass'] : ''}">
            {{data.name}}
         </a>
-        <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view>
+        <router-view class="view" transition="test" transition-mode="out-in"></router-view>
     </div>
 </template>
 
 
 <script>
     import store from './vuex/store'
+    import {getAllMessages} from './vuex/actions'
+    /**
+     * init data for chat
+     */
+    getAllMessages(store)
 
     export default {
         store,

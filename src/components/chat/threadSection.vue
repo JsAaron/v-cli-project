@@ -1,9 +1,17 @@
 <template>
   <div class="thread-section">
     <div class="thread-count">
-      <span v-show="unreadCount">123
+      <span v-show="unreadCount">
         Unread threads: {{ unreadCount }}
       </span>
     </div>
   </div>
 </template>
+
+<script>
+
+	export default {
+		
+	}
+
+</script>
