@@ -58,17 +58,28 @@ function addMessage(state, data) {
     set(state.messages, data.id, data)
 }
 
+function setCurrentThread(state, id) {
+    state.currentThreadID = id
+}
+
 const mutations = {
-    [types.RECEIVE_ALL](state, message) {
+    [types.RECEIVE_ALL](state, messages) {
         let latestMessage
-        message.forEach(data => {
+        messages.forEach(data => {
             //must be there are threadID
             if (!state.threads[data.threadID]) {
                 //create a basic container
                 createThread(state, data.threadID, data.threadName)
             }
+
+            if (!latestMessage || data.timestamp > latestMessage.timestamp) {
+                latestMessage = data
+            }
+
             addMessage(state, data)
         })
+
+        setCurrentThread(state, latestMessage.threadID)
     }
 }
 

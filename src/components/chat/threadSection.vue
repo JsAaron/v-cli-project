@@ -1,5 +1,35 @@
+<style>
+ .thread-section {
+  float: left;
+  width: 32.5%;
+}
 
-<style src="./style.css" scoped></style>
+.thread-list:hover .thread-list-item:hover {
+    background-color: #f8f8ff;
+}
+
+.thread-list:hover .thread-list-item {
+    background-color: #fff;
+}
+
+.message-list,
+.thread-list {
+    border: 1px solid #ccf;
+    font-size: 16px;
+    height: 400px;
+    margin: 0;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.message-thread-heading,
+.thread-count {
+    height: 40px;
+    margin: 0;
+}
+
+
+</style>
 
 <template>
   <div class="thread-section">
