@@ -1,6 +1,10 @@
-# project
 
-> A Vue.js project
+##Integrated case
+* A vue integrated case, combining multiple demo
+* vue-router + vue-load + vuex
+* [v-cli-project](https://github.com/JsAaron/v-cli-project)
+
+-------------
 
 ## Build Setup
 
