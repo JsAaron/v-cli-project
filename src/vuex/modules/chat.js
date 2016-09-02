@@ -30,7 +30,13 @@ const state = {
     }
 }
 
-
+/**
+ * A basic container for state.threads Object
+ * @param  {[type]} state [description]
+ * @param  {[type]} id    [description]
+ * @param  {[type]} name  [description]
+ * @return {[type]}       [description]
+ */
 function createThread(state, id, name) {
     set(state.threads, id, {
         id,
@@ -40,17 +46,29 @@ function createThread(state, id, name) {
     })
 }
 
-const mutations = {
-    [types.RECEIVE_ALL](state, data) {
-        let latestMessage
-        data.forEach(message => {
-            if (!state.threads[message.threadID]) {
-                createThread(state, message.threadID, message.threadName)
-            }
-            
-        })
+function addMessage(state, data) {
+    //add it to the thread it belongs to
+    const thread = state.threads[data.threadID]
 
-        // console.log(state.threads)
+    if (!thread.messages.some(id => id === data.id)) {
+        thread.messages.push(data.id)
+        thread.lastMessage = data
+    }
+
+    set(state.messages, data.id, data)
+}
+
+const mutations = {
+    [types.RECEIVE_ALL](state, message) {
+        let latestMessage
+        message.forEach(data => {
+            //must be there are threadID
+            if (!state.threads[data.threadID]) {
+                //create a basic container
+                createThread(state, data.threadID, data.threadName)
+            }
+            addMessage(state, data)
+        })
     }
 }
 

@@ -1,4 +1,12 @@
-<style src="./style.css" scoped></style>
+
+<style scoped>
+	.chatapp{
+		padding: 20px;
+		font-family: 'Muli', 'Helvetica Neue', helvetica, arial;
+		max-width: 760px;
+		margin: 20px auto;
+	}
+</style>
 
 <template>
   <div class="chatapp">
@@ -9,7 +17,7 @@
 
 <script>
 
-	import threadSection from './threadSection.vue'
+	import threadSection from './threadsection.vue'
 
 	export default {
 	 	components: {

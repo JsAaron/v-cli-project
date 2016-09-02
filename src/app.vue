@@ -40,9 +40,8 @@ a{
 <script>
     import store from './vuex/store'
     import {getAllMessages} from './vuex/actions'
-    /**
-     * init data for chat
-     */
+
+    //init data for chat
     getAllMessages(store)
 
     export default {
