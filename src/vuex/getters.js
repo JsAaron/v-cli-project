@@ -19,7 +19,7 @@ export function recentHistory(state) {
  * @return {[type]}       [description]
  */
 export function currentThread(state) {
-    return state.currentThreadID ? state.threads[state.currentThreadID] : {}
+    return state.chat.currentThreadID ? state.chat.threads[state.chat.currentThreadID] : {}
 }
 
 export function currentMessages(state) {
