@@ -12,7 +12,7 @@
 <template>
   <div class="chatapp">
     <thread-section></thread-section>
-    <!-- <message-section></message-section> -->
+    <message-section></message-section>
   </div>
 </template>
 
@@ -20,11 +20,11 @@
 <script>
 
 	import threadSection from './threadsection.vue'
-	// import messageSection from './messagesection.vue'
+	import messageSection from './messagesection.vue'
 	export default {
 	 	components: {
-	    	threadSection
-	    	// messageSection
+	    	threadSection,
+	    	messageSection
 	  	}
 	}
 </script>

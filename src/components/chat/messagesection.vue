@@ -1,18 +1,18 @@
 <style>
-.message-section {
-    float: right;
-    width: 65%;
+.message-list, .thread-list {
+  border: 1px solid #ccf;
+  font-size: 16px;
+  height: 400px;
+  margin: 0;
+  overflow-y: auto;
+  padding: 0;
 }
 
-.message-composer {
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: 14px;
-    height: 5em;
-    width: 100%;
-    margin: 20px 0 0;
-    padding: 10px;
+.message-section {
+  float: right;
+  width: 65%;
 }
+
 
 </style>
 
@@ -20,20 +20,9 @@
   <div class="message-section">
     <h3 class="message-thread-heading">{{ thread.name }}</h3>
     <ul class="message-list" ref="list">
-        1231231
+      <li>1</li>
+       <li>2</li>
     </ul>
-    <textarea class="message-composer" @keyup.enter="trySendMessage"></textarea>
+    <textarea class="message-composer" ></textarea>
   </div>
 </template>
-
-<script>
-import { currentThread, currentMessages } from '../vuex/getters'
-export default {
-    vuex:{
-        getters:{
-          thread: currentThread,
-          messages: currentMessages
-        }
-    }
-}
-</script>
