@@ -40,3 +40,8 @@ export const getAllMessages = ({ dispatch }) => {
         dispatch(types.RECEIVE_ALL, data)
     })
 }
+
+
+export const switchThread = ({ dispatch }, id) => {
+    dispatch(types.SWITCH_THREAD, id)
+}

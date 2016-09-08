@@ -80,6 +80,10 @@ const mutations = {
         })
 
         setCurrentThread(state, latestMessage.threadID)
+    },
+
+    [types.SWITCH_THREAD](state, id){
+        setCurrentThread(state, id)   
     }
 }
 
